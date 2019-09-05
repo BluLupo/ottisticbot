@@ -2,7 +2,7 @@
 from functools import wraps
 
 
-LIST_OF_ADMINS = [63346884,605363037,285558712,587595490]
+LIST_OF_ADMINS = [123456789]
 
 def restricted(func):
     @wraps(func)
@@ -25,7 +25,7 @@ def cancellacomandi(func):
         return func(update, context)
     return wrapped
 #OWNERBOT
-OWNER_LIST= [605363037]
+OWNER_LIST= [123456789]
 
 def ownerbot(func):
     @wraps(func)
