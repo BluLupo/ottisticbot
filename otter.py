@@ -13,7 +13,7 @@ def error(update, context):
 
 # Questa è la funzione che inizializza il bot
 def main():
-    updater = Updater(config.bot_token)
+    updater = Updater(config.bot_token, use_context=True)
     dp = updater.dispatcher
 
     # Qui "creo" i comandi e assegno una funzione
@@ -27,9 +27,6 @@ def main():
     dp.add_handler(CommandHandler("say", commands.say.init))
     dp.add_handler(CommandHandler("mute", commands.muta.init))
     dp.add_handler(CommandHandler("unmute", commands.smuta.init))
-    dp.add_handler(CommandHandler("title", commands.chattitle.init))
-    dp.add_handler(CommandHandler("description", commands.chatdescription.init))
-    dp.add_handler(CommandHandler("fix", commands.fissa.init))
     dp.add_handler(CommandHandler("setanswer", commands.insertcustomhandler.init))
     
     # Qui richiamo le funzioni senza comando, =>handler
