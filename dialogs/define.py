@@ -6,7 +6,7 @@ from utils import util
 
 def init(update, context):
     if update.message is not None and update.message.text is not None:
-        if str(update.message.text).lower().startswith("ottidtic define"):
+        if str(update.message.text).lower().startswith("ottistic define"):
     # Recupero della definizione
             arg = update.message.text[15:]
             wiki.set_lang('en')
@@ -14,7 +14,7 @@ def init(update, context):
             title = pg.title
             pg_url = pg.url
             definizione = pg.summary
-            button_list = [InlineKeyboardButton("Guarda su Wikipedia", url=pg_url)]
+            button_list = [InlineKeyboardButton("Check on Wikipedia", url=pg_url)]
             reply_markup = InlineKeyboardMarkup(util.build_menu(button_list, n_cols=1))
             text = "*{}:*\n\n{}".format(title, definizione)
             # Risposta del Bot
